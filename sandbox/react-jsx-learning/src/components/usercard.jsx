@@ -8,18 +8,21 @@
 
 // now here we have created our own component in usercard.jsx and styled it in usercard.css and we can now use this component anywhere in our code by importing it
 
+// now we have created the props in App.jsx we will now use them here to give the attributes to the different cards. we will pass props as argument in the functions
+
 
 import React from 'react'
-import randomphoto from '../assets/randomphoto.jfif'
+import randompic1 from '../assets/randompic1.jfif'
 import './usercard.css'
 
-const usercard = () => {
+const usercard = (props) => {
   return (
-    <div className='user-container'>
+    <div className='user-container' style={props.style}>
 
-        <p id='user-name'>shibaan askari</p>
-        <img id='user-image' src= {randomphoto} alt="hello" />
-        <p id='user-desc' >description of the user</p>
+        <p id='user-name'>{props.name}</p>
+        <img id='user-image' src= {props.image} alt={props.name} />
+        <p id='user-desc' >{props.desc} </p>
+        <p id='user-desc2'>description of the person</p>
       
     </div>
   )
