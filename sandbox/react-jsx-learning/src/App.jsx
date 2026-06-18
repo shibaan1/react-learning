@@ -17,10 +17,10 @@ function App() {
   return (
     <div className='container'>
 
-      <UserCard name='shibaan Askari' desc='description 1' image={randompic1} style = {{'border-radius':'10px'}}/>
-      <UserCard name= 'john doe' desc='description 2' image={randompic2} style = {{'border-radius':'10px'}} />
-      <UserCard name='steve smith' desc='description 3' image={randompic3} style = {{'border-radius':'10px'}} />
-  
+      <UserCard name='shibaan Askari' desc='description 1' image={randompic1} style={{ 'border-radius': '10px' }} />
+      <UserCard name='john doe' desc='description 2' image={randompic2} style={{ 'border-radius': '10px' }} />
+      <UserCard name='steve smith' desc='description 3' image={randompic3} style={{ 'border-radius': '10px' }} />
+
     </div>
   )
 }

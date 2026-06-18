@@ -5,9 +5,9 @@
 
 | #  | Topic                  | Status        |
 | -- | ---------------------- | ------------- |
-| 01 | JSX                    | ⏳ In Progress |
-| 02 | Components             | ⏳ In Progress |
-| 03 | Props                  | ⏳ In Progress |
+| 01 | JSX                    | ✅ Done |
+| 02 | Components             | ✅ Done |
+| 03 | Props                  | ✅ Done |
 | 04 | useState               | ⏳ In Progress |
 | 05 | useEffect              | ⏳ In Progress |
 | 06 | Lists & Keys           | ⏳ In Progress |
