@@ -29,70 +29,72 @@ import LoggerComponent from './components/LoggerComponent'
 import TimerComponent from './components/TimerComponent'
 import DataFetcher from './components/DataFetcher'
 import ResizeComponent from './components/ResizeComponent'
+import MultiEffectComponent from './components/MultiEffectComponent'
 
 function App() {
 
-  // const [count, setcount] = useState(0)
-  // const [total, settotal] = useState(10)
+  const [count, setcount] = useState(0)
+  const [total, settotal] = useState(10)
 
-  // const HandleClick = () => {
-  //   setcount(count + 1)
+  const HandleClick = () => {
+    setcount(count + 1)
 
-  // }
+  }
 
-  // const Handletotal = () => {
-  //   settotal(total + 5)
-  // }
+  const Handletotal = () => {
+    settotal(total + 5)
+  }
 
   // variation 1 : this runs two times in browser because we are in strict mode and it is just a good practise
-  // useEffect(() => {
-  //  alert('i will run in every render')
-  // }, )
+  useEffect(() => {
+    alert('i will run in every render')
+  },)
 
 
   // variation 2 :
-  // useEffect(() => {
-  //   alert('this runs only on the first render')
-  // }, [])
+  useEffect(() => {
+    alert('this runs only on the first render')
+  }, [])
 
 
   // variation3: initially it will run because the count has the inital value as 0 and is considered as the change 
-  // useEffect(() => {
-  //   alert('this will run only when the count rerenders')
-  // }, [count])
+  useEffect(() => {
+    alert('this will run only when the count rerenders')
+  }, [count])
 
 
   // variation 4 :
-  // useEffect(() => {
-  //     alert('this will run only when the count or total rerenders')
+  useEffect(() => {
+    alert('this will run only when the count or total rerenders')
 
-  // }, [count , total])
+  }, [count, total])
 
 
   // variation 5: here we will get this messege again and again because on every rerender the prevu=ious count will be unmounted and the messege will be displayed 
-  // useEffect(() => {
-  //   alert('this will run when count is updated')
+  useEffect(() => {
+    alert('this will run when count is updated')
 
-  //   return () => {
-  //    alert('this is unmount function and it will run when count is unmounted(remove) from the ui')
-  //   }
-  // }, [count])
+    return () => {
+      alert('this is unmount function and it will run when count is unmounted(remove) from the ui')
+    }
+  }, [count])
 
 
   return (
     <div>
 
-      {/* <LoggerComponent /> */}
-      {/* <TimerComponent/> */}
-      {/* < DataFetcher /> */}
-      {/* <ResizeComponent /> */}
+      <LoggerComponent />
+      <TimerComponent />
+      < DataFetcher />
+      <ResizeComponent />
+      < MultiEffectComponent />
 
-      {/* <button onClick={HandleClick}>click me</button>
+      <button onClick={HandleClick}>click me</button>
       count: {count}
       <br />
 
       <button onClick={Handletotal}>click me</button>
-      total: {total} */}
+      total: {total}
 
 
     </div>
