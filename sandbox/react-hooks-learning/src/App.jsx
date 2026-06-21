@@ -31,7 +31,7 @@ function App() {
       <Button HandleClick = {HandleClick} 
        ><h1>{State}</h1>
        </Button>
-      {/* <Counter />
+       <Counter />
       <Card> 
         <h1>hello</h1>
         <p>this is shibaan askari</p>
@@ -43,10 +43,9 @@ function App() {
       </Card>
 
       <Card children='this is card3 child defined seprately'>
-        {/* this is card 3 }
-      </Card> */
-     }
-
+        {/* this is card 3*/ }
+      </Card> 
+     
     </div>
   )
 }
