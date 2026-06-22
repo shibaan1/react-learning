@@ -4,6 +4,8 @@
 
 // 2. using ternary operator ( condition ? if true : if false)
 
+// usnig && in this if the condition before && is true then the component after && will be rendered 
+
 import { useState } from 'react'
 
 import './App.css'
@@ -11,39 +13,44 @@ import LogoutBtn from './components/LogoutBtn'
 import LoginBtn from './components/LoginBtn'
 
 function App() {
-  const [isloggedin , setlogin] = useState(true)
+  const [isloggedin, setlogin] = useState(true)
 
-    // if(isloggedin){
+  // if else 
 
-    //   return(
-    //     <LogoutBtn />
-      
-    //   )
-    // }
+  if (isloggedin) {
 
-    // else{
-    //  return(
-    //    <LoginBtn />
-    //  )
-    // }
+    return (
+      <LogoutBtn />
+
+    )
+  }
+
+  else {
+    return (
+      <LoginBtn />
+    )
+  }
 
 
-//     return(
+  return (
 
-// //  ternary operator    
-//     <div>
+    //  ternary operator    
+    <div>
 
-//   {isloggedin ? <LogoutBtn/> : <LoginBtn/>}
+      {isloggedin ? <LogoutBtn /> : <LoginBtn />}
 
-// </div>
-// )
-return(
-  <div>
-    <h1>this is conditional rendering</h1>
-    {isloggedin && <LogoutBtn />}
-    {!isloggedin && <LoginBtn/>}
-  </div>
-)
+    </div>
+  )
+
+
+  // && operator
+  return (
+    <div>
+      <h1>this is conditional rendering</h1>
+      {isloggedin && <LogoutBtn />}
+      {!isloggedin && <LoginBtn />}
+    </div>
+  )
 }
 
 export default App
