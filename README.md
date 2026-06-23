@@ -8,8 +8,8 @@
 | 01 | JSX                    | ✅ Done |
 | 02 | Components             | ✅ Done |
 | 03 | Props                  | ✅ Done |
-| 04 | useState               | ⏳ In Progress |
-| 05 | useEffect              | ⏳ In Progress |
+| 04 | useState               | ✅ Done |
+| 05 | useEffect              | ✅ Done |
 | 06 | Lists & Keys           | ⏳ In Progress |
 | 07 | Forms                  | ⏳ In Progress |
 | 08 | useContext             | ⏳ Pending     |
