@@ -10,7 +10,7 @@
 | 03 | Props                  | ✅ Done |
 | 04 | useState               | ✅ Done |
 | 05 | useEffect              | ✅ Done |
-| 06 | Lists & Keys           | ⏳ In Progress |
+| 06 | Lists & Keys           | ✅ Done |
 | 07 | Forms                  | ⏳ In Progress |
 | 08 | useContext             | ⏳ Pending     |
 | 09 | Custom Hooks           | ⏳ Pending     |
