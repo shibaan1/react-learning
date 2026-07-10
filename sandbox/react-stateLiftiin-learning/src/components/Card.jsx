@@ -9,7 +9,7 @@ import React from 'react'
 const Card = (props) => {
     return (
         <div>
-            <input type="text" onChange={(e) => props.setName(e.target.value)} />
+            < input type="text" onChange={(e) => props.setName(e.target.value)} />
             <p>name of state varaible is : {props.name} and title is : {props.title}</p>
 
         </div>
