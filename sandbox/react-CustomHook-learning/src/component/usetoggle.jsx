@@ -18,7 +18,7 @@ const usetoggle = (initialVal) => {
     }
 
     // returning whatever is needed to be returned
-    
+
   return [value , toggleValue]
 }
 
