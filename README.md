@@ -12,7 +12,7 @@
 | 05 | useEffect              | ✅ Done |
 | 06 | Lists & Keys           | ✅ Done |
 | 07 | Forms                  | ✅ Done |
-| 08 | useContext             | ⏳ Pending     |
+| 08 | useContext             | ✅ Done |
 | 09 | Custom Hooks           | ⏳ Pending     |
 | 10 | useReducer             | ⏳ Pending     |
 | 11 | React Router           | ⏳ Pending     |

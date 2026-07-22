@@ -69,3 +69,32 @@ function App() {
 }
 
 export default App
+
+
+function useLocalStorage(key, initialValue) {
+
+  const [value, setValue] = useState(() => {
+    const saved = localStorage.getItem(key);
+    return saved ? JSON.parse(saved) : initialValue;
+  });
+
+  useEffect(() => {
+    localStorage.setItem(key, JSON.stringify(value));
+  }, [key, value]);
+
+  return [value, setValue];
+}
+
+// Component that persists favourite color
+function App() {
+  const [color, setColor] = useLocalStorage('color', '');
+
+  return (
+    <>
+    
+    <p>color: {color}</p>
+    <button onClick={setColor(red)}>change color</button>
+    
+    </>
+  );
+}
