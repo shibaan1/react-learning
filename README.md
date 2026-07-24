@@ -13,7 +13,7 @@
 | 06 | Lists & Keys           | ✅ Done |
 | 07 | Forms                  | ✅ Done |
 | 08 | useContext             | ✅ Done |
-| 09 | Custom Hooks           | ⏳ Pending     |
+| 09 | Custom Hooks           | ✅ Done |
 | 10 | useReducer             | ⏳ Pending     |
 | 11 | React Router           | ⏳ Pending     |
 | 12 | API Calls              | ⏳ Pending     |
