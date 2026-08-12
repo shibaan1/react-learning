@@ -18,6 +18,7 @@ import Navbar from './components/Navbar'
 import Courses from './components/Courses'
 import Test from './components/Test'
 import Reports from './components/Reports'
+import NotFound from './components/NotFound'
 import './App.css'
 import ParamsComp from './components/ParamsComp'
 
