@@ -5,24 +5,24 @@ import React, { Component } from 'react'
 import { Link, NavLink } from 'react-router'
 
 const Navbar = () => {
-  return (
-    <div>
-        <ul>
-            <li>
-                <NavLink to='/'>Home</NavLink>
-            </li>
+    return (
+        <div>
+            <ul>
+                <li>
+                    <NavLink to='/'>Home</NavLink>
+                </li>
 
-            <li>
-                <NavLink to="/about">About</NavLink>
-            </li>
+                <li>
+                    <NavLink to="/about">About</NavLink>
+                </li>
 
-            <li>
-                <NavLink to="/dashboard">dashboard</NavLink>
-            </li>
-        </ul>
-      
-    </div>
-  )
+                <li>
+                    <NavLink to="/dashboard">dashboard</NavLink>
+                </li>
+            </ul>
+
+        </div>
+    )
 }
 
 export default Navbar

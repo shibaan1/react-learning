@@ -5,16 +5,16 @@ import { useNavigate } from 'react-router'
 
 const Home = () => {
     const navigate = useNavigate()
-    function handleClick(){
+    function handleClick() {
         navigate('/about')
 
     }
-  return (
-    <div>
-      this is the home page
-      <button onClick={handleClick}>move to about page</button>
-    </div>
-  )
+    return (
+        <div>
+            this is the home page
+            <button onClick={handleClick}>move to about page</button>
+        </div>
+    )
 }
 
 export default Home

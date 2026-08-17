@@ -9,8 +9,8 @@
 // we can have nested routing which means we can navigate to an element and then move to the next element from that element. for this we will use the children array in which we provide the path and the element just like the router and in the parent component we will add the </outlet>
 // we can create a route such that if no path matches show this page
 
-import { useState } from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router'
+import { useEffect, useState } from 'react'
+import { createBrowserRouter, RouterProvider, useNavigate, useParams } from 'react-router'
 import Home from './components/Home'
 import About from './components/About'
 import Dashboard from './components/Dashboard'
@@ -30,53 +30,53 @@ const router = createBrowserRouter(
     {
       path: '/',    // this is the path
       element:
-      <div>
-        <Navbar />
-        <Home />
-      </div>     //this is the element
+        <div>
+          <Navbar />
+          <Home />
+        </div>     //this is the element
     },
     {
       path: '/about',
-      element: 
-      <div>
-        <Navbar />
-        <About/>
-      </div>
+      element:
+        <div>
+          <Navbar />
+          <About />
+        </div>
     },
     {
       path: '/dashboard',
-      element: 
-      <div>
-        <Navbar />
-        <Dashboard/>
-      </div>,
-      children:[
+      element:
+        <div>
+          <Navbar />
+          <Dashboard />
+        </div>,
+      children: [
         {
-          path:'courses',
-          element:<Courses />
+          path: 'courses',
+          element: <Courses />
         },
         {
-          path:'test-Series',
-          element:<Test/>
+          path: 'test-Series',
+          element: <Test />
 
         },
         {
-          path:'reports',
-          element:<Reports/>
+          path: 'reports',
+          element: <Reports />
         }
       ]
     },
     {
       path: '/param/:id',
       element:
-      <div>
-        <Navbar />
-        <ParamsComp />
+        <div>
+          <Navbar />
+          <ParamsComp />
         </div>
     },
     {
-      path:'*',
-      element:<NotFound/>
+      path: '*',
+      element: <NotFound />
     }
   ]
 )
@@ -86,10 +86,73 @@ function App() {
 
   return (
     <>
-<RouterProvider router={router}/>
+      <RouterProvider router={router} />
 
     </>
   )
 }
 
 export default App
+
+
+// .Q3. Write a complete component called SearchUser that:
+
+// Has a text input and search button
+// Fetches from https://jsonplaceholder.typicode.com/users?username=${query} on submit
+// Shows loading only while searching — not on initial render
+// Shows the found user's name and email
+// Shows "No user found" if result array is empty
+// Has error handling
+// Does NOT use useEffect — fetch happens in the submit handler
+
+function SearchUser(){
+  const [text , setText] = useState(null)
+  const [query , setQuery] = useState('')
+  const [loading , setLoading] = useState(false)
+  const [error ,setError] = useState(null)
+
+
+  const fetcher = async (query)=>{
+    setLoading(true)
+    try{
+      const res = await fetch(`https://jsonplaceholder.typicode.com/users?username=${query}`)
+      if(!res.ok) throw new Error('no able the fetch')
+        const data = await res.json()
+      
+        setText(data)
+      
+    } catch(err){
+      {setError(err.message)}
+     } finally{setLoading(false)}
+  }
+
+  const handleSubmit =(e)=>{
+    e.preventDefault()
+   
+    fetcher(query)
+  }
+
+  if(loading)return<p>loading...</p>
+  if(error) return (
+    <div>
+      <p>there is an error</p>
+    </div>
+  )
+  if(!text) return <p>no user found</p>
+
+  return(
+    <div>
+    <form onSubmit={handleSubmit}>
+      <input type="text"
+      value={query}  
+      onChange={(e) => setQuery(e.target.value)}
+      
+      />
+      <button type='submit'>submit</button>
+    </form>
+
+    <p>name:{text.name}</p>
+    <p>email:{text.email}</p>
+    </div> 
+  )
+}
